@@ -275,7 +275,7 @@ It's pretty okay to change the `appName`. But before you do so, you need to stop
 
 You can keep multiple configuration and settings files in the same directory and pass them to mup using the command parameters `--settings` and `--config`. For example, to use a file `mup-staging.json` and `staging-settings.json` add the parameters like this:
 
-    mup deploy --config=mup-staging.json --settings=staging-settings.json
+    mupx deploy --config=mup-staging.json --settings=staging-settings.json
 
 ### SSL Support
 
@@ -288,6 +288,7 @@ To do that just add following configuration to your `mup.json` file.
   ...
 
   "ssl": {
+    // Location of the files in local computer. This can reference '~' as the users home directory.
     "certificate": "./bundle.crt", // this is a bundle of certificates
     "key": "./private.key", // this is the private key of the certificate
     "port": 443 // 443 is the default value and it's the standard HTTPS port
@@ -297,7 +298,7 @@ To do that just add following configuration to your `mup.json` file.
 }
 ~~~
 
-Now, simply do `mup setup` and then `mup deploy`. Now your app is running with a modern SSL setup.
+Now, simply do `mupx setup` and then `mupx deploy`. Now your app is running with a modern SSL setup.
 
 To learn more about the SSL setup refer to the [`mup-frontend-server`](https://github.com/meteorhacks/mup-frontend-server) project.
 
